@@ -28,15 +28,9 @@ namespace Sabujcha.Controllers
                 products = await context.Products.OrderBy(p => p.Id).ToListAsync(),
                 productsIcons=await context.ProductsIcons.OrderBy(pi => pi.Id).ToListAsync(), 
                 
-
-            };
-
-
-          
-                 ;   
+            };   
             return View(homeViewModels);
         }
 
-       
     }
 }

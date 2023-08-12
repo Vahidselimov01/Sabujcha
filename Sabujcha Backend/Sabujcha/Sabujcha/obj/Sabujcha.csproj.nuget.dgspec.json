@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\source\\repos\\Sabujcha\\Sabujcha\\Sabujcha.csproj": {}
+    "C:\\Users\\Asus\\Desktop\\Sabujcha\\Sabujcha Backend\\Sabujcha\\Sabujcha\\Sabujcha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\source\\repos\\Sabujcha\\Sabujcha\\Sabujcha.csproj": {
+    "C:\\Users\\Asus\\Desktop\\Sabujcha\\Sabujcha Backend\\Sabujcha\\Sabujcha\\Sabujcha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\Sabujcha\\Sabujcha\\Sabujcha.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Sabujcha\\Sabujcha Backend\\Sabujcha\\Sabujcha\\Sabujcha.csproj",
         "projectName": "Sabujcha",
-        "projectPath": "C:\\Users\\Asus\\source\\repos\\Sabujcha\\Sabujcha\\Sabujcha.csproj",
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Sabujcha\\Sabujcha Backend\\Sabujcha\\Sabujcha\\Sabujcha.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\source\\repos\\Sabujcha\\Sabujcha\\obj\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Sabujcha\\Sabujcha Backend\\Sabujcha\\Sabujcha\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,6 +54,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.32, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [

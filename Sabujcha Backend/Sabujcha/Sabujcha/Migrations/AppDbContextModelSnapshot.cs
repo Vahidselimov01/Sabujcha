@@ -19,6 +19,147 @@ namespace Sabujcha.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Sabujcha.Models.AboutUsArea", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Signature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AboutUsAreas");
+                });
+
+            modelBuilder.Entity("Sabujcha.Models.CatagoryNames", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("HeaderCatagorysId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HeaderCatagorysId");
+
+                    b.ToTable("CatagoryNames");
+                });
+
+            modelBuilder.Entity("Sabujcha.Models.FooterContent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ActionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ControllerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TitlesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TitlesId");
+
+                    b.ToTable("FooterContents");
+                });
+
+            modelBuilder.Entity("Sabujcha.Models.FooterTitles", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FooterTitles");
+                });
+
+            modelBuilder.Entity("Sabujcha.Models.HeaderCatagorys", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HeaderCatagorys");
+                });
+
+            modelBuilder.Entity("Sabujcha.Models.HeaderNav", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BasketIcon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HeaderNavs");
+                });
+
+            modelBuilder.Entity("Sabujcha.Models.NavDropName", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("HeaderNavId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HeaderNavId");
+
+                    b.ToTable("NavDropNames");
+                });
+
             modelBuilder.Entity("Sabujcha.Models.Products", b =>
                 {
                     b.Property<int>("Id")
@@ -68,6 +209,27 @@ namespace Sabujcha.Migrations
                     b.HasIndex("ProductsId");
 
                     b.ToTable("ProductsIcons");
+                });
+
+            modelBuilder.Entity("Sabujcha.Models.CatagoryNames", b =>
+                {
+                    b.HasOne("Sabujcha.Models.HeaderCatagorys", "HeaderCatagorys")
+                        .WithMany("CatagoryNames")
+                        .HasForeignKey("HeaderCatagorysId");
+                });
+
+            modelBuilder.Entity("Sabujcha.Models.FooterContent", b =>
+                {
+                    b.HasOne("Sabujcha.Models.FooterTitles", "Titles")
+                        .WithMany("FooterContents")
+                        .HasForeignKey("TitlesId");
+                });
+
+            modelBuilder.Entity("Sabujcha.Models.NavDropName", b =>
+                {
+                    b.HasOne("Sabujcha.Models.HeaderNav", "HeaderNav")
+                        .WithMany("DropNames")
+                        .HasForeignKey("HeaderNavId");
                 });
 
             modelBuilder.Entity("Sabujcha.Models.ProductsIcons", b =>
