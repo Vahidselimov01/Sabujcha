@@ -7,6 +7,7 @@ namespace Sabujcha.ViewModels
     {
         public List<FooterContent> FooterContents { get; set; }
         public List<FooterTitles> FooterTitles { get; set; }
+        public FooterContact FooterContact { get; set; }
 
     }
 }

@@ -20,6 +20,7 @@ namespace Sabujcha.DAL
         public DbSet<NavDropName> NavDropNames { get; set; }
         public DbSet<FooterContent>FooterContents { get; set; }
         public DbSet<FooterTitles>FooterTitles { get; set; }
+        public DbSet<FooterContact>FooterContacts { get; set; }
 
     }
 }

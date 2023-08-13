@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -18,6 +19,9 @@ namespace Sabujcha.Models
         public decimal? NewPrice { get; set; }
         public int? Rate { get; set; }   
         public List<ProductsIcons> ProductIcons { get; set; }
+        [NotMapped]
+        public IFormFile FormImage { get; set; }
+
 
 
     }

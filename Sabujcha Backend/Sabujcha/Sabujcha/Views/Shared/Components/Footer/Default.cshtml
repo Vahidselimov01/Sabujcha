@@ -14,56 +14,50 @@
                             </div>
                             <div class="footer-content">
                                 <ul>
-                                   
-                                  @foreach (FooterContent fc in Model.FooterContents)
+
+                                    @foreach (FooterContent fc in Model.FooterContents)
                                     {
-                                       @if (ft.Id==fc.TitlesId)
+                                        @if (ft.Id == fc.TitlesId)
                                         {
-                                            <li><a  asp-action="@fc.ActionName" asp-controller="@fc.ControllerName">@fc.Name</a></li>
+                                            <li><a asp-action="@fc.ActionName" asp-controller="@fc.ControllerName">@fc.Name</a></li>
                                         }
                                     }
-                                  
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                 }
-                
-
-
                 @*Contact Us bu hisse diger hisselerden ferqli database de saxlanilib .
-
-
                 *@
 
 
-                @* <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer-widget footer-widget-red footer-black-color mb-40">
-                <div class="footer-title mb-25">
-                <h4>Contact Us</h4>
-                </div>
-                <div class="footer-about">
-                <p>Your address goes here</p>
-                <div class="footer-contact mt-20">
-                <ul>
-                <li>0123456789</li>
-                <li>0123456789</li>
-                </ul>
-                </div>
-                <div class="footer-contact mt-20">
-                <ul>
-                <li>demo@example.com</li>
-                <li>demo@example.com</li>
-                </ul>
-                </div>
-                </div>
-                </div>
-                </div>*@
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-widget footer-widget-red footer-black-color mb-40">
+                        <div class="footer-title mb-25">
+                            <h4>@Model.FooterContact.Name</</h4>
+                        </div>
+                        <div class="footer-about">
+                            <p>@Model.FooterContact.Title</p>
+                            <div class="footer-contact mt-20">
+                                <ul>
+                                    <li>@Model.FooterContact.Phone</</li>
 
+                                </ul>
+                            </div>
+                            <div class="footer-contact mt-20">
+                                <ul>
+                                    <li>@Model.FooterContact.Email</</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="footer-bottom pb-25 pt-25 gray-bg-2">
+@*    <div class="footer-bottom pb-25 pt-25 gray-bg-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -84,5 +78,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 </footer>

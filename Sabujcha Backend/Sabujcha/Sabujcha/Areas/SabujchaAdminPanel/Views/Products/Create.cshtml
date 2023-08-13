@@ -1,0 +1,74 @@
+﻿@model Sabujcha.Models.Products
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Create</h4>
+
+<hr />
+<style>
+    .form-control, .dataTables_wrapper select {
+        border: 1px solid #f3f3f3;
+        font-weight: 200;
+        display: inline-block;
+        width: 200px;
+    }
+
+        </style>
+
+<div class="row">
+    <div class="col-md-4">
+        <form enctype="multipart/form-data" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger">Description</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUlr" class="control-label"></label>
+                <input asp-for="ImageUlr" class="form-control" />
+                <span asp-validation-for="ImageUlr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OldPrice" class="control-label"></label>
+                <input asp-for="OldPrice" class="form-control" />
+                <span asp-validation-for="OldPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewPrice" class="control-label"></label>
+                <input asp-for="NewPrice" class="form-control" />
+                <span asp-validation-for="NewPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rate" class="control-label"></label>
+                <input asp-for="Rate" class="form-control" />
+                <span asp-validation-for="Rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script type="text/javascript">
+    $(".custom-file-input").on("change",function(){
+
+        var FileName=$(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(FileName);
+    });
+    
+</script>

@@ -19,7 +19,8 @@ namespace Sabujcha.ViewComponents
             FooterVM footerVM = new FooterVM
             {
                 FooterContents = await context.FooterContents.ToListAsync(),
-                FooterTitles = await context.FooterTitles.ToListAsync()
+                FooterTitles = await context.FooterTitles.ToListAsync(),
+                FooterContact=await context.FooterContacts.FirstOrDefaultAsync(),
 
             };
             return View(footerVM);
