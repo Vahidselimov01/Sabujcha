@@ -1,63 +1,87 @@
-﻿@model IEnumerable<Sabujcha.Models.Products>
+﻿@using Sabujcha.Models;
+@model List<Products>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>
-    <a asp-action="Create">Create New</a>
-</h1>
+
+<p>
+    <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+              Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+               Description
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImageUlr)
+            NewPrice
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OldPrice)
+                OldPrice
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NewPrice)
+            Rate
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Rate)
+                Image
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUlr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OldPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NewPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+
+       @foreach (Products item in Model)
+        {
+
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    @item.NewPrice
+                </td>
+                <td>
+                    @item.OldPrice
+                </td>
+                <td>
+                    @if (@item.Rate==null)
+                    {
+                        <p>0%</p>
+
+                    }
+                    else
+                    {
+                        <p>@item.Rate%</p>
+                    }
+                </td>
+                 <td>
+                    <img alt="productsImage" src="~/assets/img/product/@item.ImageUlr">
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Edit">Edit</a>
+                </td>
+                <td>
+                    <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Delete">Delete</a>
+                </td>
+                <td>
+                    <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+
+            </tr>
+           
+        }
+
     </tbody>
+
 </table>

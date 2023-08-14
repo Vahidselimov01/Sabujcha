@@ -1,0 +1,32 @@
+﻿@using Sabujcha.Models;
+@model Products
+<div>
+
+
+  
+    
+        <h4>Ürün Adı: @Model.Name</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">Açıklama</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+            <dt class="col-sm-2">Yeni Fiyat</dt>
+        <dd class="col-sm-10">@Model.NewPrice</dd>
+
+            <dt class="col-sm-2">Eski Fiyat</dt>
+        <dd class="col-sm-10">@Model.OldPrice</dd>
+
+            <dt class="col-sm-2">Resim</dt>
+            <dd class="col-sm-10">
+            <img alt="productsImage" src="~/assets/img/product/@Model.ImageUlr">
+            </dd>
+        </dl>
+
+    
+        
+    
+</div>
+<div>
+    <a asp-action="Index">Geri dön</a>
+</div>

@@ -54,14 +54,19 @@ namespace Sabujcha
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute(
+             name: "areas",
+             areaName: "SabujchaAdminPanel",
+             pattern: "SabujchaAdminPanel/{controller=Dashboard}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-                endpoints.MapControllerRoute(
-                     name: "areas",
-                  pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
-                    );
+                //endpoints.MapControllerRoute(
+                //     name: "areas",
+                //  pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+                //    );
             });
         }
     }

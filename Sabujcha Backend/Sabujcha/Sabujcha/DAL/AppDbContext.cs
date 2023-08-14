@@ -23,4 +23,6 @@ namespace Sabujcha.DAL
         public DbSet<FooterContact>FooterContacts { get; set; }
 
     }
+   
 }
+

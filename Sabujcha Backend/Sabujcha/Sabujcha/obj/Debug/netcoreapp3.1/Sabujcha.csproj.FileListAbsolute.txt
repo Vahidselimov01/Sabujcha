@@ -230,12 +230,12 @@ C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netc
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Sabujcha.dll
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Sabujcha.pdb
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Sabujcha.genruntimeconfig.cache
-C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\Dashboard\Index.cshtml.g.cs
-C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\_ViewStart.cshtml.g.cs
-C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\_ViewImports.cshtml.g.cs
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Views\AboutUs\Index.cshtml.g.cs
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\_ViewImports.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\_ViewStart.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\Dashboard\Index.cshtml.g.cs
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\Products\Index.cshtml.g.cs
-C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\Products\Create.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\Products\Details.cshtml.g.cs

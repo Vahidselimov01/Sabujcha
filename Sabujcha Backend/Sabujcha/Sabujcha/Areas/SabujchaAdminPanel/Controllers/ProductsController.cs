@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Sabujcha.DAL;
 using Sabujcha.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
 {
-    [Area("SabujchaAdminpanel")]
+    [Area("SabujchaAdminPanel")]
     public class ProductsController : Controller
     {
         private readonly AppDbContext context;
@@ -14,16 +16,24 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
         {
             this.context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Products>products = new List<Products>();
+            var products = await context.Products.ToListAsync();
             return View(products);
         }
         [HttpGet]
-        public IActionResult Create() {
-            Products products = new Products();
-            return View(products);
+        public async Task< IActionResult> Details(int id)
+        {
+            Products product =  await  context.Products.FirstOrDefaultAsync(p => p.Id == id);
+            //if (product == null)
+            //{
+            //    return NotFound();
+            //}
+            return View(product);
+
         }
 
     }
+
+
 }
