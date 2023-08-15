@@ -1,0 +1,49 @@
+﻿@using Sabujcha.Models;
+@model Products
+
+
+<form  method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPrice" class="control-label"></label>
+        <input asp-for="NewPrice" class="form-control" />
+        <span asp-validation-for="NewPrice" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OldPrice" class="control-label"></label>
+        <input asp-for="OldPrice" class="form-control" />
+        <span asp-validation-for="OldPrice" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Rate" class="control-label"></label>
+        <input asp-for="Rate" class="form-control" />
+        <span asp-validation-for="Rate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" style="color:black;font-size:20px;font-family:'Times New Roman'">Hal Hazır ki Photo:</label>
+        <img alt="productsImage" src="~/assets/img/product/@Model.ImageUlr" style="border:0.5px solid black; >
+        <span asp-validation-for="OldPrice" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FormImage" class="control-label"></label>
+        <input asp-for="FormImage" type="file" class="form-control" />
+        <span asp-validation-for="FormImage" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Düzenle" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Geriye Dön</a>
+    </div>
+</form>

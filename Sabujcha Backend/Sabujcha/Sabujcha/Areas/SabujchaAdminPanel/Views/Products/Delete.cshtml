@@ -1,0 +1,15 @@
+﻿@using Sabujcha.Models;
+@model Products
+
+<h2>Product Sil</h2>
+
+<h3>Ürün Adı: @Model.Name</h3>
+<p>Açıklama: @Model.Description</p>
+<p>Yeni Fiyat: @Model.NewPrice</p>
+<p>Eski Fiyat: @Model.OldPrice</p>
+<img alt="productsImage" src="~/assets/img/product/@Model.ImageUlr">
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <input type="submit" value="delete" class="btn btn-danger" />
+    <a asp-action="Index">Geriye Dön</a>
+</form>

@@ -6,9 +6,7 @@
 }
 
 
-<p>
-    <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -69,19 +67,21 @@
             <tr>
 
                 <td>
-                    <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Edit">Edit</a>
+                    <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                 </td>
                 <td>
-                    <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Delete">Delete</a>
+                    <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
                 <td>
                     <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">Details</a>
                 </td>
-
+                <td>
+                    <p>
+                        <a asp-area="SabujchaAdminPanel" asp-controller="Products" asp-action="Create">Create New</a>
+                    </p>
+                </td>
             </tr>
-           
         }
-
     </tbody>
 
 </table>
