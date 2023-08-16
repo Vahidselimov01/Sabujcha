@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\SabujchaAdminPanel\Data\**" />
+    <Compile Remove="Areas\SabujchaAdminPanel\Models\**" />
+    <Content Remove="Areas\SabujchaAdminPanel\Data\**" />
+    <Content Remove="Areas\SabujchaAdminPanel\Models\**" />
+    <EmbeddedResource Remove="Areas\SabujchaAdminPanel\Data\**" />
+    <EmbeddedResource Remove="Areas\SabujchaAdminPanel\Models\**" />
+    <None Remove="Areas\SabujchaAdminPanel\Data\**" />
+    <None Remove="Areas\SabujchaAdminPanel\Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20230809064747_CreateDatabase.cs" />
     <Compile Remove="Migrations\20230809064747_CreateDatabase.Designer.cs" />
     <Compile Remove="Migrations\20230809073850_CreateTableProducts.cs" />
@@ -14,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.32" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.32" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.32" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.32">
@@ -24,8 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\SabujchaAdminPanel\Data\" />
-    <Folder Include="Areas\SabujchaAdminPanel\Models\" />
     <Folder Include="wwwroot\admin\" />
   </ItemGroup>
 

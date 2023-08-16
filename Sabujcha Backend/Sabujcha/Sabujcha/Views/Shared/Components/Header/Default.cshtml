@@ -31,9 +31,9 @@
                                                 <li>
                                                     <ul>
                                                         <li class="mega-menu-title">@hc.Name</li>
-                                                       @foreach (CatagoryNames cn in Model.CatagoryNames)
+                                                        @foreach (CatagoryNames cn in Model.CatagoryNames)
                                                         {
-                                                          @if (cn.HeaderCatagorysId==hc.Id)
+                                                            @if (cn.HeaderCatagorysId == hc.Id)
                                                             {
                                                                 <li><a href="shop.html">@cn.Name</a></li>
                                                             }
@@ -46,40 +46,27 @@
                                         </ul>
                                     </li>
                                     <li class="top-hover">
-                                        <a href="blog-left-sidebar.html">blog</a>
-                                        @*<ul class="submenu">
-                                        <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                        <li>
-                                        <a href="#">Blog Standard <span><i class="ion-ios-arrow-right"></i></span></a>
-                                        <ul class="lavel-menu">
-                                        <li><a href="blog-left-sidebar.html">left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">right sidebar</a></li>
-                                        <li><a href="blog-no-sidebar.html">no sidebar</a></li>
-                                        </ul>
-                                        </li>
-                                        <li>
-                                        <a href="#">Post Types <span><i class="ion-ios-arrow-right"></i></span> </a>
-                                        <ul class="lavel-menu">
-                                        <li><a href="blog-details-standerd.html">Standard post</a></li>
-                                        <li><a href="blog-details-audio.html">audio post</a></li>
-                                        <li><a href="blog-details-video.html">video post</a></li>
-                                        <li><a href="blog-details-gallery.html">gallery post</a></li>
-                                        <li><a href="blog-details-link.html">link post</a></li>
-                                        <li><a href="blog-details-quote.html">quote post</a></li>
-                                        </ul>
-                                        </li>
-                                        </ul>*@
+                                        <a asp-controller="Account" asp-action="Register">Sign Up</a>
+                                     
+
+
+                                    </li> 
+                                    <li class="top-hover">
+                                        <a asp-controller="Account" asp-action="Login">Login</a>
+
+
                                     </li>
+
                                     <li class="top-hover">
                                         <a href="#">pages</a>
                                         <ul class="submenu">
-                                          
-                                           @foreach (var items in Model.HeaderDropNames)
+
+                                            @foreach (var items in Model.HeaderDropNames)
                                             {
                                                 <li><a asp-controller="AboutUs" asp-action="Index">@items.Name</a></li>
                                             }
-                                            
-                                            
+
+
                                         </ul>
                                     </li>
                                     <li><a href="contact.html">contact</a></li>

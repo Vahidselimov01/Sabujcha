@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sabujcha.DAL;
+using Sabujcha.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +32,26 @@ namespace Sabujcha
             {
                 opt.UseSqlServer(configuration.GetConnectionString("default"));
             });
+
+            services.AddIdentity<AppUser, IdentityRole>(opt =>
+            {
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireLowercase = true;
+                opt.Password.RequiredLength = 8;
+                opt.Password.RequireNonAlphanumeric = true;
+                opt.Password.RequireUppercase = true;
+                opt.Lockout.MaxFailedAccessAttempts = 3;
+                opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
+                opt.Lockout.AllowedForNewUsers = true;
+                opt.SignIn.RequireConfirmedEmail = false;
+                //opt.User.RequireUniqueEmail = false;
+                opt.SignIn.RequireConfirmedAccount = false;
+                opt.User.AllowedUserNameCharacters = "QWERTYUIOPASDFGHJKLZXXXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890_";
+
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
         }
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -71,3 +92,4 @@ namespace Sabujcha
         }
     }
 }
+
