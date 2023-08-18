@@ -249,3 +249,8 @@ C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\bin\Debug\netc
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\About\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\About\Create.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\About\Delete.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\About\Detail.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\About\Edit.cshtml.g.cs

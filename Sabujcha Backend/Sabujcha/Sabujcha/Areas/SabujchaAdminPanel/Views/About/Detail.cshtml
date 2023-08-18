@@ -1,0 +1,42 @@
+﻿@using Sabujcha.Models;
+@model AboutUsArea
+<style>th{
+padding:20px;
+}
+
+img{
+    width:100px;
+    height:100px;
+}
+</style>
+<table>
+    <thead>
+
+
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Title</th>
+            <th>Image1</th>
+            <th>Image2</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        <tr>
+            <th>@Model.Id</th>
+            <th>@Model.Name</th>
+            <th>@Model.Description</th>
+            <th>@Model.Title</th>
+            <th><img src="@Model.ImageUrl" /></th>
+            <th><img src="@Model.Signature" /></th>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index" asp-controller="About" asp-route-id="@Model.Id">Geri</a>
+</div>
+
+

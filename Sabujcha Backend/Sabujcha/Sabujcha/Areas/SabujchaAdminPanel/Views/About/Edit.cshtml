@@ -1,0 +1,30 @@
+﻿@using Sabujcha.Models;
+@model AboutUsArea
+
+<h2>Düzenle: @Model.Title</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="Title">Başlık:</label>
+        <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" />
+    </div>
+
+    <!-- Diğer alanlar -->
+
+    <div class="form-group">
+        <label for="ImageFile1">Resim 1:</label>
+        <input type="file" class="form-control-file" id="ImageFile1" name="ImageFile1" />
+        <img src="@Model.ImageUrl" alt="Resim 1" />
+    </div>
+
+    <div class="form-group">
+        <label for="ImageFile2">Resim 2:</label>
+        <input type="file" class="form-control-file" id="ImageFile2" name="ImageFile2" />
+        <img src="@Model.Signature" alt="Resim 2" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

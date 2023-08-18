@@ -1,21 +1,21 @@
 ﻿@using Sabujcha.Models;
 @model Products
 <div>
-
-
-  
-    
-        <h4>Ürün Adı: @Model.Name</h4>
+        <h4>Məhsulun adı Adı: @Model.Name</h4>
         <hr />
         <dl class="row">
             <dt class="col-sm-2">Açıklama</dt>
         <dd class="col-sm-10">@Model.Description</dd>
 
-            <dt class="col-sm-2">Yeni Fiyat</dt>
+            <dt class="col-sm-2">Yeni   qiymət</dt>
         <dd class="col-sm-10">@Model.NewPrice</dd>
 
-            <dt class="col-sm-2">Eski Fiyat</dt>
+            <dt class="col-sm-2">köhnə qiymət</dt>
         <dd class="col-sm-10">@Model.OldPrice</dd>
+
+
+        <dt class="col-sm-2">Endirim faizi</dt>
+        <dd class="col-sm-10">@Model.Rate%</dd>
 
             <dt class="col-sm-2">Resim</dt>
             <dd class="col-sm-10">

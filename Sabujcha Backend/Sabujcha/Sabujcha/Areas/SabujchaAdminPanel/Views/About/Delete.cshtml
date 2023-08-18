@@ -1,0 +1,24 @@
+﻿@using Sabujcha.Models;
+@model AboutUsArea
+
+
+
+
+<form  method="post" style="margin:50px">
+    <p>Id:@Model.Id</p>
+    <hr />
+    <p>Name:@Model.Name</p>
+    <hr />
+    <p>Description:@Model.Description</p>
+    <img alt="productsImage" src="@Model.ImageUrl" style="border:1px solid black; width:300px;height:300px;">
+<br />
+<hr />
+    <img alt="productsImage" src="@Model.Signature" style="border:1px solid red;width:300px;height:300px;">
+    <hr />
+    <br />
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-area="SabujchaAdminPanel" asp-controller="About" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>
+

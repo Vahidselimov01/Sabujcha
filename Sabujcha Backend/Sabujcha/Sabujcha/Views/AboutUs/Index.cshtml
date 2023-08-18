@@ -15,25 +15,28 @@
 <!-- Breadcrumb Area End -->
 <!-- About Us Area Start -->
 <div class="about-us-area pt-100 pb-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 d-flex align-items-center">
-                <div class="overview-content-2">
-                    <h4>@Model.AboutUsAreas.Title</h4>
-                    <h2>@Model.AboutUsAreas.Name</h2>
-                    <p class="peragraph-blog">@Model.AboutUsAreas.Description</p>
-                        <img src="~/assets/img/icon-img/@Model.AboutUsAreas.Signature" alt="Candidate Signature">
+    @foreach (AboutUsArea item in Model.AboutUsAreas)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 d-flex align-items-center">
+                    <div class="overview-content-2">
+                        <h4>@item.Title</h4>
+                        <h2>@item.Name</h2>
+                        <p class="peragraph-blog">@item.Description</p>
+                        <img src="@item.Signature" alt="Candidate Signature">
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="overview-img text-center">
                     <a href="#">
-                    <img src="~/assets/img/banner/@Model.AboutUsAreas.ImageUrl" alt="">
+                        <img src="@item.ImageUrl" alt="Image">
                     </a>
                 </div>
             </div>
         </div>
+    }
     </div>
 <!-- About Us Area End -->
 <!-- Testimonial Area Start -->

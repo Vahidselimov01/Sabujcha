@@ -1,10 +1,11 @@
 ﻿using Sabujcha.Models;
+using System.Collections.Generic;
 
 namespace Sabujcha.ViewModels
 {
     public class AboutVM
     {
-        public AboutUsArea AboutUsAreas { get; set; }
+        public List< AboutUsArea> AboutUsAreas { get; set; }
 
     }
 }

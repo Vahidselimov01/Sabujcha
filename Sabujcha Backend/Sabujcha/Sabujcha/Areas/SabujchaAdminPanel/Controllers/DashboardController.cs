@@ -9,5 +9,6 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
         {
             return View();
         }
+
     }
 }

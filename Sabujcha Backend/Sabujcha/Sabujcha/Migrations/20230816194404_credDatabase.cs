@@ -2,7 +2,7 @@
 
 namespace Sabujcha.Migrations
 {
-    public partial class CreateAddition : Migration
+    public partial class credDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

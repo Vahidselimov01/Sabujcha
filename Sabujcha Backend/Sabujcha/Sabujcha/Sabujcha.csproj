@@ -22,6 +22,12 @@
     <Compile Remove="Migrations\20230809073850_CreateTableProducts.Designer.cs" />
     <Compile Remove="Migrations\20230809073926_CreateTableProducts.cs" />
     <Compile Remove="Migrations\20230809073926_CreateTableProducts.Designer.cs" />
+    <Compile Remove="Migrations\20230812181729_CreateTableFooterContent.cs" />
+    <Compile Remove="Migrations\20230812181729_CreateTableFooterContent.Designer.cs" />
+    <Compile Remove="Migrations\20230813073143_CreateAddition.cs" />
+    <Compile Remove="Migrations\20230813073143_CreateAddition.Designer.cs" />
+    <Compile Remove="Migrations\20230816192552_CreateIdentitytable.cs" />
+    <Compile Remove="Migrations\20230816192552_CreateIdentitytable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
