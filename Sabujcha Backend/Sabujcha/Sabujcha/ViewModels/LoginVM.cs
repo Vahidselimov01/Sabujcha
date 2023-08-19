@@ -13,5 +13,7 @@ namespace Sabujcha.ViewModels
 
         [Required, DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        public bool RememberMe { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿ using System.ComponentModel.DataAnnotations;
+using System.Windows.Markup;
 
 namespace Sabujcha.ViewModels
 {
@@ -20,6 +21,9 @@ namespace Sabujcha.ViewModels
         public string Password { get; set; }
         [Required, DataType(DataType.Password),Compare(nameof(Password))]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+       public bool TermsConfirmed  { get; set; }
 
     }
 }

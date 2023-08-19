@@ -45,17 +45,31 @@
 
                                         </ul>
                                     </li>
-                                    <li class="top-hover">
-                                        <a asp-controller="Account" asp-action="Register">Sign Up</a>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
 
+                                        <li class="top-hover">
+                                       
+                                            <a asp-controller="Account" asp-action="MyAccount">| @User.Identity.Name</a>
+                                        </li>
+                                        <li class="top-hover">
+                                     
+                                            <a asp-controller="Account" asp-action="Logout">LogOut</a>
+                                        </li>
 
+                                    }
+                                    else
+                                    {
 
-                                    </li>
-                                    <li class="top-hover">
-                                        <a asp-controller="Account" asp-action="Login">Login</a>
+                                        <li class="top-hover">
+                                            <a asp-controller="Account" asp-action="Register">Sign Up</a>
+                                        </li>
+                                        <li class="top-hover">
+                                            <a asp-controller="Account" asp-action="Login">Login</a>
 
+                                        </li>
+                                    }                                 
 
-                                    </li>
 
                                     <li class="top-hover">
                                         <a asp-area="SabujchaAdminPanel" asp-controller="Dashboard" asp-action="Index" style="color:blue">AdminPanel</a>
@@ -65,10 +79,10 @@
                                             {
                                                 if (items.Areas != null)
                                                 {
-                                                   
-                                                    if (items.Controllers!=null)
+
+                                                    if (items.Controllers != null)
                                                     {
-                                                           if (items.Actions!=null)
+                                                        if (items.Actions != null)
                                                         {
                                                             <li><a asp-area="@items.Areas" asp-controller="@items.Controllers" asp-action="@items.Actions">@items.Name</a></li>
                                                         }
@@ -79,7 +93,7 @@
                                                     <li><a asp-action="Index" asp-controller="Home" target="_blank">Home</a></li>
                                                 }
                                             }
-                                           
+
                                         </ul>
                                     </li>
                                     <li><a href="contact.html">contact</a></li>

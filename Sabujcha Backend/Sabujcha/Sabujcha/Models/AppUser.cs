@@ -6,5 +6,10 @@ namespace Sabujcha.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+
+        public bool TermsConfirmed { get; set; }
+
+
     }
 }
