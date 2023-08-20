@@ -1,0 +1,26 @@
+﻿@using Sabujcha.ViewModels;
+@{
+    Layout = "_Layout2.cshtml";
+}
+@model AccountVM
+<body>
+    <div class="datas">
+        <label for="FirstName" class="col-md-5">
+            <span>FirstName:</span>
+            <input type="text" readonly value="@Model.FirsName">
+
+        </label>
+        <label for="LastName" class="col-md-5">
+            <span>LastName:</span>
+            <input type="text" readonly value="@Model.LastName">
+        </label>
+        <label for="UserName" class="col-md-5">
+            <span>UserName:</span>
+            <input type="text" readonly value="@Model.UserName">
+        </label>
+        <label for="Email" class="col-md-6">
+            <span>Email:</span>
+            <input type="email" readonly value="@Model.Email">
+        </label>
+    </div>
+</body>   

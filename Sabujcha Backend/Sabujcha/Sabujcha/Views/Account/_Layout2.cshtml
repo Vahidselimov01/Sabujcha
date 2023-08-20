@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/assets/MyAccount/css/myaccount.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <title>@ViewBag.Title</title>
+</head>
+<header>
+    <nav>
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a href="../html/Settings.html">Settings</a></li>
+            <li><a asp-controller="Account" asp-action="MyAccount">MyAccount</a></li>
+            <li><a asp-controller="Account" asp-action="Account">Account</a></li>
+        </ul>
+    </nav>
+</header>
+@RenderBody()
+</html>

@@ -70,9 +70,9 @@ namespace Sabujcha
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
-            app.UseAuthentication();
+			app.UseAuthentication();
+			app.UseAuthorization();
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapAreaControllerRoute(

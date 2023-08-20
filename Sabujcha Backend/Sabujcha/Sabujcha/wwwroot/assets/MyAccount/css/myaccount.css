@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header nav {
+  border-bottom: 0.1px solid black !important;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+}
+header nav ul li {
+  list-style: none;
+  padding: 25px;
+  font-size: 20px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+header nav ul li a:hover {
+  color: rgb(50, 167, 50);
+  transition: 0.3s ease-in-out;
+}
+
+body p:first-of-type {
+  text-align: center;
+  margin-top: 10%;
+  font-size: 20px;
+}
+body p:first-of-type span {
+  color: rgb(50, 167, 50);
+}
+body .Acoount {
+  margin-top: 5%;
+  font-size: 20px;
+  text-align: center;
+}
+body .Acoount a {
+  color: rgb(50, 167, 50);
+  font-size: 18px;
+}
+body .datas span {
+  color: rgb(50, 167, 50);
+  font-size: 20px;
+}
+body .datas label {
+  margin-top: 3%;
+  margin-left: 2%;
+  padding: 50px;
+}
+body .datas input {
+  display: inline-block;
+  padding: 5px;
+  width: 40%;
+}
+body .datas input[type=email] {
+  width: 34%;
+  margin-left: 30px;
+}
+body .datas .buttons {
+  width: 40%;
+  margin-left: 40%;
+  margin-top: 10%;
+}/*# sourceMappingURL=myaccount.css.map */

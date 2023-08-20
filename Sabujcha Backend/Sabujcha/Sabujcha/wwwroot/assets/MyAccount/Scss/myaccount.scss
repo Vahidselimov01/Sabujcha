@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    nav {
+        border-bottom: 0.1px solid black !important;
+        ul {
+            display: flex;
+            justify-content: center;
+
+            li {
+                list-style: none;
+                padding: 25px;
+                font-size: 20px;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    &:hover {
+                        color: rgb(50, 167, 50);
+                        transition: 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }  
+}
+body{
+    p:first-of-type{
+        text-align: center;
+        margin-top: 10%;
+        font-size: 20px;
+        span{
+            color: rgb(50, 167, 50);
+        }
+    }
+    .Acoount{
+        margin-top: 5%;
+        font-size: 20px;
+        text-align: center;
+        a{
+            color: rgb(50, 167, 50);
+            font-size: 18px;
+        }
+    }
+    .datas{
+        span{
+          color: rgb(50, 167, 50);
+            font-size:20px;
+        }
+        
+        label{
+            margin-top: 3%;
+            margin-left: 2%;
+            padding: 50px;
+        }
+        input{
+            display: inline-block;
+            padding: 5px;
+            width: 40%;
+        }
+        input[type="email"]{
+          width: 34%;
+          margin-left: 30px;
+        }
+        .buttons{
+            width: 40%;
+            margin-left: 40%;
+            margin-top: 10%;
+        }
+  }
+  
+}
