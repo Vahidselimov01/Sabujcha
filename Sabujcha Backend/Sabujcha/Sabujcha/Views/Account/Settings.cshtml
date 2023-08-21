@@ -1,0 +1,49 @@
+﻿@using Sabujcha.ViewModels;
+@{
+    Layout = "_Layout2";
+    }
+
+    @model SettingsVM
+<body>
+    <form method="post">
+        <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="datas">
+            <label for="FirstName" class="col-md-5">
+                <span>FirstName:</span>
+                <input type="text" asp-for="FirstName">
+                <span asp-validation-for="FirstName"></span>
+            </label>
+            <label for="LastName" class="col-md-5">
+                <span>LastName:</span>
+                <input type="text" asp-for="LastName">
+                <span asp-validation-for="LastName"></span>
+            </label>
+            <label for="UserName" class="col-md-5">
+                <span>UserName:</span>
+                <input type="text" asp-for="UserName">
+                <span asp-validation-for="UserName"></span>
+            </label>
+            <label for="Email" class="col-md-6">
+                <span>Email:</span>
+                <input type="email" asp-for="Email">
+                <span asp-validation-for="Email"></span>
+            </label>
+            <label for="Current Password" class="col-md-3">
+                <span>Current Password:</span>
+                <input type="password" asp-for="CurrentPassword">
+                <span asp-validation-for="CurrentPassword"></span>
+            </label>
+            <label for="Conform Password" class="col-md-3">
+                <span>Conform Password:</span>
+                <input type="password" asp-for="ConfirmPassword">
+                <span asp-validation-for="ConfirmPassword"></span>
+            </label>
+            <label for="New Password" class="col-md-3">
+                <span>New Password:</span>
+                <input type="password" asp-for="Password">
+                <span asp-validation-for="Password"></span>
+            </label>
+            <div class="buttons"><input type="submit" value="submit" class=" btn btn-success"></div>
+        </div>
+    </form>
+</body>

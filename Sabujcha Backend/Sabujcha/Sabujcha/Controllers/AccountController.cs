@@ -7,6 +7,7 @@ using Sabujcha.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace Sabujcha.Controllers
@@ -105,8 +106,11 @@ namespace Sabujcha.Controllers
 					if (login.RememberMe)
 					{
 						Microsoft.AspNetCore.Identity.SignInResult signInResult = await signInManager.PasswordSignInAsync(user, login.Password, true, true);
+
 						if (!signInResult.Succeeded)
 						{
+							ModelState.AddModelError("", "Username ve yaxud parol sehvdi");
+							
 							if (signInResult.IsLockedOut)
 							{
 								ModelState.AddModelError("", "You Have a dissmiss count 3");
@@ -119,7 +123,8 @@ namespace Sabujcha.Controllers
 						Microsoft.AspNetCore.Identity.SignInResult signInResult = await signInManager.PasswordSignInAsync(user, login.Password, false, true);
 						if (!signInResult.Succeeded)
 						{
-							if (signInResult.IsLockedOut)
+                            ModelState.AddModelError("", "Username ve yaxud parol sehvdi");
+                            if (signInResult.IsLockedOut)
 							{
 								ModelState.AddModelError("", "You Have a dissmiss count 3");
 							}
@@ -203,12 +208,97 @@ namespace Sabujcha.Controllers
 		}
 
 
+		[Authorize(Roles ="Member")]
+		public async Task<IActionResult> Settings()
+		{
+			if (!ModelState.IsValid) { return View(); }
+			AppUser user= await userManager.FindByNameAsync(User.Identity.Name);
+			if (user==null)
+			{
+				return View();
+			}
+            else
+            {
+				SettingsVM settings = new SettingsVM
+				{
+					FirstName=user.FirstName,
+					UserName=user.UserName,
+					Email=user.Email,
+					LastName=user.LastName,
+				
+
+
+				};
+
+                return View(settings);
+
+            }	
+		}
 
 
 
 
+		[HttpPost]
+		[AutoValidateAntiforgeryToken]
+		public async Task<IActionResult>Settings(SettingsVM vM)
+		{
+
+            AppUser Existeduser = await userManager.FindByNameAsync(User.Identity.Name);
+            SettingsVM settingsVM = new SettingsVM
+            {
+                UserName = Existeduser.UserName,
+                LastName = Existeduser.LastName,
+                Email = Existeduser.Email,
+
+            };
+            if (!ModelState.IsValid) return View();
 
 
+            bool result = vM.Password == null && vM.ConfirmPassword == null && vM.CurrentPassword != null;
+            if (vM.Email == null || vM.Email != Existeduser.Email)
+            {
+                ModelState.AddModelError("", "You can not change your email");
+                return View(settingsVM);
+            }
+            if (result)
+            {
+                Existeduser.UserName = vM.UserName;
+                Existeduser.LastName = vM.LastName;
+                Existeduser.Email = vM.Email;
+                Existeduser.PasswordHash = vM.Password;
+
+                await userManager.UpdateAsync(Existeduser);
+
+            }
+            else
+            {
+                Existeduser.UserName = vM.UserName;
+                Existeduser.LastName = vM.LastName;
+                Existeduser.Email = vM.Email;
+                if (vM.CurrentPassword == vM.Password)
+                {
+                    ModelState.AddModelError("", "You can not change password with the same password");
+                    return View();
+                }
+                IdentityResult ResultSettings = await userManager.ChangePasswordAsync(Existeduser, vM.CurrentPassword, vM.Password);
+                if (!ResultSettings.Succeeded)
+                {
+                    foreach (IdentityError error in ResultSettings.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                    return View(settingsVM);
+                }
+
+            }
+			return RedirectToAction("MyAccount","Account");
+
+
+        }
+
+
+
+//Bu bir defe Ise salanir ve SuperAdmin Yaradilir ...
 
 
 
@@ -229,10 +319,11 @@ namespace Sabujcha.Controllers
 			
 				await userManager.CreateAsync(user, "Vahid1-1");
 				await userManager.AddToRoleAsync(user, Roles.SuperAdmin.ToString());
-			
+	
 			return Content("Super Admin Was Successfully Created");
 
 
+		
 
 		}
 

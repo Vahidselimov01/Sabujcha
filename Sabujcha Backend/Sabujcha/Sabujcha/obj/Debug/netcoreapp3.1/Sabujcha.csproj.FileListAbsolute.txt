@@ -257,3 +257,7 @@ C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netc
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Views\Account\MyAccount.cshtml.g.cs
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Views\Account\_Layout2.cshtml.g.cs
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Views\Account\Account.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Views\Account\Settings.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\RoleManager\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\UserRoles\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\UserRoles\Manage.cshtml.g.cs

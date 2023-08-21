@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,9 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-
 namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
 {
+  
     [Area("SabujchaAdminPanel")]
     public class ProductsController : Controller
     {
@@ -25,7 +26,7 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
             this.webHost = webHost;
         }
   
-
+        
   
         public async Task<IActionResult> Index()
         {
