@@ -6,7 +6,10 @@ using Sabujcha.Utilities;
 using Sabujcha.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
@@ -62,17 +65,52 @@ namespace Sabujcha.Controllers
 
 					return View();
 				}
+				string token = await userManager.GenerateEmailConfirmationTokenAsync(user);
+				string link = Url.Action(nameof(VerifyEmail), "Account", new { email = user.Email, token }, Request.Scheme, Request.Host.ToString());
+				MailMessage message = new MailMessage();
+				message.From = new MailAddress("vahidslimov01@gmail.com");
+				message.To.Add(new MailAddress(user.Email, "Sabujcha Company"));
+				message.Subject = "Verify Email";
+				string body = string.Empty;
+				using (StreamReader reader = new StreamReader("wwwroot/assets/Template/verifyemail.html"))
+				{
+					body = reader.ReadToEnd();
+				}
+
+				string about = $"Hi <strong>{user.FirstName + " " + user.LastName}</strong> In order to start using your  account, you need to confirm your email address.";
+				body = body.Replace("{{link}}", link);
+				message.Body = body.Replace("{{About}}", about);
+				message.IsBodyHtml = true;
+				SmtpClient smtp = new SmtpClient();
+				smtp.Host = "smtp.gmail.com";
+				smtp.Port = 587;
+				smtp.EnableSsl = true;
+				smtp.Credentials = new NetworkCredential("vahidslimov01@gmail.com", "vmyundxtbtshjdvg");
+				smtp.Send(message);
+				TempData["Verify"] = true;
 				await userManager.AddToRoleAsync(user, Roles.Member.ToString());
 				await signInManager.SignInAsync(user, false);
 
 			}
-
-
 			return RedirectToAction("Index", "Home");
 
 
 		}
+		public async Task<IActionResult> VerifyEmail(string email, string token)
+		{
+			AppUser user = await userManager.FindByEmailAsync(email);
+			if (user == null)
+			{
+				return BadRequest();
+			}
+			await userManager.ConfirmEmailAsync(user, token);
+			await signInManager.SignInAsync(user, true);
+			TempData["Verified"] = true;
 
+			return RedirectToAction("Home", "Index");
+
+
+		}
 		public IActionResult Login()
 		{
 
@@ -94,13 +132,18 @@ namespace Sabujcha.Controllers
 			}
 			IList<string> roles = await userManager.GetRolesAsync(user);
 			string role = roles.FirstOrDefault(r => r.ToLower().Trim() == Roles.Member.ToString().ToLower().Trim());
-			if (roles == null)
+			
+
+		
+
+
+            if (roles == null)
 			{
 				return View("Error");
 			}
 
 			else
-			if (role==Roles.Member.ToString())
+			if (role == Roles.Member.ToString())
 			{
 				{
 					if (login.RememberMe)
@@ -295,6 +338,8 @@ namespace Sabujcha.Controllers
 
 
         }
+
+
 
 
 

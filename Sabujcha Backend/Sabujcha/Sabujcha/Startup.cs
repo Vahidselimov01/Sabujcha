@@ -1,3 +1,4 @@
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,7 +28,13 @@ namespace Sabujcha
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+ .AddCookie(options =>
+ {
+     options.LoginPath = "/AccountAdmin/Login"; // Doğru login sayfasının yolu
+ });
             services.AddDbContext<AppDbContext>(opt =>
             {
                 opt.UseSqlServer(configuration.GetConnectionString("default"));
@@ -45,10 +52,18 @@ namespace Sabujcha
                 opt.Lockout.AllowedForNewUsers = true;
                 opt.SignIn.RequireConfirmedEmail = false;
                 //opt.User.RequireUniqueEmail = false;
-                opt.SignIn.RequireConfirmedAccount = false;
+                opt.SignIn.RequireConfirmedAccount = true;
                 opt.User.AllowedUserNameCharacters = "QWERTYUIOPASDFGHJKLZXXXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890_";
 
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+        
+            services.AddControllersWithViews();
+
+            // Startup.cs dosyasında ConfigureServices metodu içinde
+
+
+
+
         }
 
 
@@ -66,13 +81,13 @@ namespace Sabujcha
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-			app.UseAuthentication();
-			app.UseAuthorization();
-           
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapAreaControllerRoute(

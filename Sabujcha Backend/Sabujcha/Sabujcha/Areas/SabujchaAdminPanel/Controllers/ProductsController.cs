@@ -15,6 +15,7 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
 {
   
     [Area("SabujchaAdminPanel")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class ProductsController : Controller
     {
         private readonly AppDbContext context;

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
 {
     [Area("SabujchaAdminPanel")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class RoleManagerController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Sabujcha.Areas.SabujchaAdminPanel.ViewModels;
@@ -10,6 +11,8 @@ using System.Threading.Tasks;
 namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
 {
     [Area("SabujchaAdminPanel")]
+    //[Authorize(Policy = "SuperAdminPolicy")]
+
     public class UserRolesController : Controller
     {
         private readonly UserManager<AppUser> userManager;

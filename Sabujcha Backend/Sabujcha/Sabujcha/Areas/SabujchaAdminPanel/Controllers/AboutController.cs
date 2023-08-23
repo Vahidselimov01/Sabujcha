@@ -10,10 +10,12 @@ using Microsoft.AspNetCore.Hosting;
 using Sabujcha.ViewModels;
 using Sabujcha.Extensions;
 using Sabujcha.Utilities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
 {
     [Area("SabujchaAdminPanel")]
+    
     public class AboutController : Controller
     {
         private readonly AppDbContext context;
