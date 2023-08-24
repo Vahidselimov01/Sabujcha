@@ -262,3 +262,6 @@ C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netc
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\UserRoles\Index.cshtml.g.cs
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\UserRoles\Manage.cshtml.g.cs
 C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\AccountAdmin\Login.cshtml.g.cs
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Asus\Desktop\Sabujcha\Sabujcha Backend\Sabujcha\Sabujcha\obj\Debug\netcoreapp3.1\Razor\Areas\SabujchaAdminPanel\Views\UserEdits\UserList.cshtml.g.cs

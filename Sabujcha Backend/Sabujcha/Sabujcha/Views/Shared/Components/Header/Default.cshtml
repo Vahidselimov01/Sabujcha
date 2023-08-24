@@ -72,7 +72,7 @@
 
 
                                     <li class="top-hover">
-                                        <a asp-area="SabujchaAdminPanel" asp-controller="Dashboard" asp-action="Index" style="color:blue">AdminPanel</a>
+                                        <a asp-area="SabujchaAdminPanel" asp-controller="Dashboard" asp-action="Index"  style="color:blue">AdminPanel</a>
                                         <ul class="submenu">
 
                                             @foreach (var items in Model.HeaderDropNames)
@@ -85,9 +85,14 @@
                                                         if (items.Actions != null)
                                                         {
                                                             <li><a asp-area="@items.Areas" asp-controller="@items.Controllers" asp-action="@items.Actions">@items.Name</a></li>
+                                                           
+
+                                                            
+                                                           
                                                         }
                                                     }
                                                 }
+                                                
                                                 else
                                                 {
                                                     <li><a asp-action="Index" asp-controller="Home" target="_blank">Home</a></li>

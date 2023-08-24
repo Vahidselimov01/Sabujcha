@@ -9,6 +9,7 @@ namespace Sabujcha.Models
 
 
         public bool TermsConfirmed { get; set; }
+        public bool IsBlock { get; set; }
 
 
     }

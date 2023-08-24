@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
 {
     [Area("SabujchaAdminPanel")]
-    
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class AboutController : Controller
     {
         private readonly AppDbContext context;

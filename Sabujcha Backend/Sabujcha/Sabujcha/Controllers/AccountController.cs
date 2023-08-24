@@ -126,65 +126,74 @@ namespace Sabujcha.Controllers
 			AppUser user = await userManager.FindByNameAsync(login.UserName);
 
 			if (user == null)
-
 			{
 				return View();
 			}
-			IList<string> roles = await userManager.GetRolesAsync(user);
-			string role = roles.FirstOrDefault(r => r.ToLower().Trim() == Roles.Member.ToString().ToLower().Trim());
-			
-
-		
-
-
-            if (roles == null)
+			if (user.IsBlock == true)
 			{
-				return View("Error");
-			}
-
-			else
-			if (role == Roles.Member.ToString())
-			{
-				{
-					if (login.RememberMe)
-					{
-						Microsoft.AspNetCore.Identity.SignInResult signInResult = await signInManager.PasswordSignInAsync(user, login.Password, true, true);
-
-						if (!signInResult.Succeeded)
-						{
-							ModelState.AddModelError("", "Username ve yaxud parol sehvdi");
-							
-							if (signInResult.IsLockedOut)
-							{
-								ModelState.AddModelError("", "You Have a dissmiss count 3");
-							}
-
-						}
-					}
-					else
-					{
-						Microsoft.AspNetCore.Identity.SignInResult signInResult = await signInManager.PasswordSignInAsync(user, login.Password, false, true);
-						if (!signInResult.Succeeded)
-						{
-                            ModelState.AddModelError("", "Username ve yaxud parol sehvdi");
-                            if (signInResult.IsLockedOut)
-							{
-								ModelState.AddModelError("", "You Have a dissmiss count 3");
-							}
-
-						}
-
-					}
-				}
+				ModelState.AddModelError("", "Siz Block edilmisiz zehmet olmasa Adminle elaqe saxlayin");
+				return View();
 			}
 			else
 			{
-				return View("error");
-			}
-			
-			return RedirectToAction("Index", "Home");
+                IList<string> roles = await userManager.GetRolesAsync(user);
+                string role = roles.FirstOrDefault(r => r.ToLower().Trim() == Roles.Member.ToString().ToLower().Trim());
 
-		}
+
+
+
+
+                if (roles == null)
+                {
+                    return View("Error");
+                }
+
+                else
+                if (role == Roles.Member.ToString())
+                {
+                    {
+                        if (login.RememberMe)
+                        {
+                            Microsoft.AspNetCore.Identity.SignInResult signInResult = await signInManager.PasswordSignInAsync(user, login.Password, true, true);
+
+                            if (!signInResult.Succeeded)
+                            {
+                                ModelState.AddModelError("", "Username ve yaxud parol sehvdi");
+
+                                if (signInResult.IsLockedOut)
+                                {
+                                    ModelState.AddModelError("", "You Have a dissmiss count 3");
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            Microsoft.AspNetCore.Identity.SignInResult signInResult = await signInManager.PasswordSignInAsync(user, login.Password, false, true);
+                            if (!signInResult.Succeeded)
+                            {
+                                ModelState.AddModelError("", "Username ve yaxud parol sehvdi");
+                                if (signInResult.IsLockedOut)
+                                {
+                                    ModelState.AddModelError("", "You Have a dissmiss count 3");
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+                else
+                {
+                    return View("error");
+                }
+
+               
+            }
+            return RedirectToAction("Index", "Home");
+
+
+        }
 
 
 		public async Task<IActionResult> Logout()
@@ -255,8 +264,8 @@ namespace Sabujcha.Controllers
 		public async Task<IActionResult> Settings()
 		{
 			if (!ModelState.IsValid) { return View(); }
-			AppUser user= await userManager.FindByNameAsync(User.Identity.Name);
-			if (user==null)
+            var user = await userManager.FindByNameAsync(User.Identity.Name);
+            if (user==null)
 			{
 				return View();
 			}

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Sabujcha.Areas.SabujchaAdminPanel.ViewModels;
 using Sabujcha.Models;
 using Sabujcha.Utilities;
 using Sabujcha.ViewModels;
@@ -22,6 +23,11 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
             this.signInManager = signInManager;
             this.roleManager = roleManager;
         }
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
         public async Task<IActionResult> Login(LoginVM login)
         {
 
@@ -34,7 +40,7 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
                     if (roles.Contains("Admin") || roles.Contains("SuperAdmin"))
                     {
                         await signInManager.SignInAsync(user, isPersistent: false);
-                        return RedirectToAction("Index", "Dashboard"); // Başarılı login sonrası admin paneline yönlendir
+                        return RedirectToAction("Index", "Dashboard");
                     }
                     else
                     {
@@ -49,6 +55,11 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
             return View(login);
         }
 
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Dashboard");
+        }
 
 
 

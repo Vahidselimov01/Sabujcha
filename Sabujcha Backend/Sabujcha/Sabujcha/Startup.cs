@@ -30,11 +30,7 @@ namespace Sabujcha
         {
 
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
- .AddCookie(options =>
- {
-     options.LoginPath = "/AccountAdmin/Login"; // Doğru login sayfasının yolu
- });
+            
             services.AddDbContext<AppDbContext>(opt =>
             {
                 opt.UseSqlServer(configuration.GetConnectionString("default"));
@@ -62,7 +58,11 @@ namespace Sabujcha
             // Startup.cs dosyasında ConfigureServices metodu içinde
 
 
-
+            Microsoft.AspNetCore.Authentication.AuthenticationBuilder authenticationBuilder = services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+ .AddCookie(options =>
+ {
+     options.LoginPath = "Areas/SabujchaAdminPanel/Controllers/AccountAdmin/Login"; // Doğru login sayfasının yolu
+ });
 
         }
 

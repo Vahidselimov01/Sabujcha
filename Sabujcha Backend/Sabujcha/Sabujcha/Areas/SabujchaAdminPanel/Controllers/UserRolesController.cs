@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
 {
     [Area("SabujchaAdminPanel")]
-    //[Authorize(Policy = "SuperAdminPolicy")]
-
+    [Authorize(Roles = "SuperAdmin")]
     public class UserRolesController : Controller
     {
         private readonly UserManager<AppUser> userManager;

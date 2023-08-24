@@ -1,0 +1,32 @@
+﻿@using Sabujcha.Areas.SabujchaAdminPanel.ViewModels;
+@model List<UserEditVM>
+
+<h2>User List</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@(user.IsBlock ? "Blocked" : "Active")</td>
+                <td>
+                    <form method="post" asp-controller="UserEdits" asp-action="UserEdit">
+                        <input type="hidden" name="userId" value="@user.UserId" />
+                        <input type="submit" value="@(user.IsBlock ? "Unblock" : "Block")" class="btn btn-primary" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
