@@ -32,6 +32,8 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
                     UserId = user.Id,
                     UserName = user.UserName,
                     Email = user.Email,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
                     IsBlock = user.IsBlock
                 })
                 .ToList();
@@ -66,5 +68,77 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
             }
 
         }
+
+        public IActionResult UserDelete()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> UserDelete(string userId)
+        {
+            var user = await userManager.FindByIdAsync(userId);
+
+            if (user != null)
+            {
+                var result = await userManager.DeleteAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("UserDelete");
+                }
+                else
+                {
+                    // Hata durumunda işlemler
+                }
+            }
+            else
+            {
+                // Kullanıcı bulunamadığında işlemler
+            }
+
+            // İşlem sonrası yönlendirme veya işlem sonuçlarına göre view döndürme
+            return RedirectToAction("UserList");
+        }
+
+
+        public IActionResult UserCreate()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+
+        public async Task<IActionResult> UserCreate(UserCreateVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser user = new AppUser
+                {
+                    UserName = model.Username,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+
+                };
+                var result = await userManager.CreateAsync(user, model.Password);
+                await userManager.AddToRoleAsync(user, Roles.Member.ToString());
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Userlist");
+                }
+
+            }
+
+
+
+            return View();
+        }
+
+
+
     }
 }

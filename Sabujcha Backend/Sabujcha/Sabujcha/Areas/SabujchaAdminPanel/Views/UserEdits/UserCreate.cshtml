@@ -1,0 +1,24 @@
+﻿@using Sabujcha.Areas.SabujchaAdminPanel.ViewModels;
+@model UserCreateVM
+
+<form method="post" asp-action="UserCreate">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input asp-for="Username" name="Username" class="form-control" required />
+    </div><div class="form-group">
+        <label for="FirstName">Firstname:</label>
+        <input asp-for="FirstName" name="FirstName" class="form-control" required />
+    </div><div class="form-group">
+        <label for="LastName">LastName</label>
+        <input asp-for="LastName" name="LastName" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input asp-for="Email"  name="Email" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input asp-for="Password"  name="Password" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Create User</button>
+</form>

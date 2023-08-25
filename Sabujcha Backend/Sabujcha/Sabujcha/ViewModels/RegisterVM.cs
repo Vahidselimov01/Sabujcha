@@ -13,7 +13,7 @@ namespace Sabujcha.ViewModels
         public string UserName { get; set; }
         [Required]
         [MinLength(3), MaxLength(15)]
-        public string LastName { get; set; }
+        public string LastName { get; set; } 
         [Required,DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [Required, DataType(DataType.Password)]

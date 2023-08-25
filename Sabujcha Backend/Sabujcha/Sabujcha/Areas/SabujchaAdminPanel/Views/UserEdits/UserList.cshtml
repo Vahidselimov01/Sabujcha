@@ -9,6 +9,8 @@
         <tr>
             <th>Username</th>
             <th>Email</th>
+            <th>FirstName</th>
+            <th>LastName</th>
             <th>Status</th>
             <th>Action</th>
         </tr>
@@ -19,11 +21,15 @@
             <tr>
                 <td>@user.UserName</td>
                 <td>@user.Email</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
                 <td>@(user.IsBlock ? "Blocked" : "Active")</td>
                 <td>
-                    <form method="post" asp-controller="UserEdits" asp-action="UserEdit">
+                    <form method="post" asp-controller="UserEdits" asp-action=UserEdit>
                         <input type="hidden" name="userId" value="@user.UserId" />
                         <input type="submit" value="@(user.IsBlock ? "Unblock" : "Block")" class="btn btn-primary" />
+                        <input type="submit" asp-controller="UserEdits" asp-action="UserDelete" class="btn btn-danger" value="UserDelete">
+                        <input type="submit" asp-controller="UserEdits" asp-action="UserCreate" class="btn btn-success" value="UserCreate">
                     </form>
                 </td>
             </tr>

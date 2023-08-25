@@ -4,6 +4,7 @@ namespace Sabujcha.ViewModels
 {
     public class SettingsVM
     {
+        
         [Required]
         [MinLength(3), MaxLength(15)]
         public string FirstName { get; set; }
