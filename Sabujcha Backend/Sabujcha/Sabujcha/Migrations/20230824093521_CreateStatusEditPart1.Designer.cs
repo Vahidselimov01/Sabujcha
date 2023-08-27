@@ -9,8 +9,7 @@ using Sabujcha.DAL;
 
 namespace Sabujcha.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    [Migration("20230824093521_CreateStatusEditPart1")]
+
     partial class CreateStatusEditPart1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

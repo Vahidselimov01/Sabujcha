@@ -43,7 +43,7 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> UserEdit(string userId, bool IsBlock)
+        public async Task<IActionResult> UserEdit(string userId)
         {
             var user = await userManager.FindByIdAsync(userId);
 
@@ -58,7 +58,7 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
                 var result = await userManager.UpdateAsync(user);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("UserList"); // Başarılı güncelleme işlemi sonrası kullanıcı listesine yönlendirme
+                    return RedirectToAction("UserList"); 
                 }
                 else
                 {

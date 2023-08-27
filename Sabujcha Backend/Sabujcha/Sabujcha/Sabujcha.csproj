@@ -28,6 +28,14 @@
     <Compile Remove="Migrations\20230813073143_CreateAddition.Designer.cs" />
     <Compile Remove="Migrations\20230816192552_CreateIdentitytable.cs" />
     <Compile Remove="Migrations\20230816192552_CreateIdentitytable.Designer.cs" />
+    <Compile Remove="Migrations\20230827063735_CreateTableContactUs.cs" />
+    <Compile Remove="Migrations\20230827063735_CreateTableContactUs.Designer.cs" />
+    <Compile Remove="Migrations\20230827090755_createContactUspart2.cs" />
+    <Compile Remove="Migrations\20230827090755_createContactUspart2.Designer.cs" />
+    <Compile Remove="Migrations\20230827090906_createContactUspart3.cs" />
+    <Compile Remove="Migrations\20230827090906_createContactUspart3.Designer.cs" />
+    <Compile Remove="Migrations\20230827091124_cretaTablecontact.cs" />
+    <Compile Remove="Migrations\20230827091124_cretaTablecontact.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,7 +48,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>

@@ -274,6 +274,33 @@ namespace Sabujcha.Migrations
                     b.ToTable("CatagoryNames");
                 });
 
+            modelBuilder.Entity("Sabujcha.Models.ContactUs", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ContacUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactMessage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactSubject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactUs");
+                });
+
             modelBuilder.Entity("Sabujcha.Models.FooterContact", b =>
                 {
                     b.Property<int>("Id")

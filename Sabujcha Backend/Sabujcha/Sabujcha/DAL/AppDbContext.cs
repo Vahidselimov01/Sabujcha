@@ -2,15 +2,18 @@
 using Microsoft.EntityFrameworkCore;
 using Sabujcha.Models;
 
+
 namespace Sabujcha.DAL
 {
     public class AppDbContext: IdentityDbContext<AppUser>
     {
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
 
         }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -26,6 +29,8 @@ namespace Sabujcha.DAL
         public DbSet<FooterContent>FooterContents { get; set; }
         public DbSet<FooterTitles>FooterTitles { get; set; }
         public DbSet<FooterContact>FooterContacts { get; set; }
+        public DbSet<ContactUs>ContactUs { get; set; }
+     
 
     }
    

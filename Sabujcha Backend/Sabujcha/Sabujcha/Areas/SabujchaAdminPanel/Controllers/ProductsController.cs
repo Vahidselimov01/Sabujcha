@@ -26,9 +26,7 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
             this.context = context;
             this.webHost = webHost;
         }
-  
-        
-  
+
         public async Task<IActionResult> Index()
         {
             var products = await context.Products.ToListAsync();

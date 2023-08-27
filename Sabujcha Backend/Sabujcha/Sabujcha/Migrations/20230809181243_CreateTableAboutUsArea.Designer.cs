@@ -9,8 +9,7 @@ using Sabujcha.DAL;
 
 namespace Sabujcha.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    [Migration("20230809181243_CreateTableAboutUsArea")]
+   
     partial class CreateTableAboutUsArea
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

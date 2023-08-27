@@ -9,8 +9,7 @@ using Sabujcha.DAL;
 
 namespace Sabujcha.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    [Migration("20230819100450_CreateIdentityTerms")]
+    
     partial class CreateIdentityTerms
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

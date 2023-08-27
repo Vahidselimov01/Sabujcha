@@ -9,8 +9,7 @@ using Sabujcha.DAL;
 
 namespace Sabujcha.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    [Migration("20230816194111_cred")]
+   
     partial class cred
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
