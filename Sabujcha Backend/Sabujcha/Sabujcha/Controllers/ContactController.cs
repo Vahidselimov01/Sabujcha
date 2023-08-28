@@ -17,7 +17,11 @@ namespace Sabujcha.Controllers
         {
             this.context = context;
         }
-    
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet]
         public async Task<IActionResult>Index(bool isSuccess)
         {
             ViewBag.IsSuccess = isSuccess;
@@ -46,9 +50,7 @@ namespace Sabujcha.Controllers
                 ModelState.AddModelError("", "Datalari doldurun");
 
             }
-
             contact.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
-
             await context.ContactUs.AddAsync(contact);
 			await context.SaveChangesAsync();
 		

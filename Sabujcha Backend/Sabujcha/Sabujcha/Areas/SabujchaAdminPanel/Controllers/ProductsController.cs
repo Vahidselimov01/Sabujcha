@@ -74,8 +74,6 @@ namespace Sabujcha.Areas.SabujchaAdminPanel.Controllers
             return View(product);
 
         }
-
-
         public async Task<IActionResult> Delete(int id)
         {
             var product = await context.Products.FindAsync(id);
